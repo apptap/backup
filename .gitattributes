@@ -1,0 +1,11 @@
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mp3
+*.tar.xz
+*.tar.gz filter=lfs diff=lfs merge=lfs -text
+*.3gp filter=lfs diff=lfs merge=lfs -text
+*.mp3
+*.avi
+*.wmv
+england.tar.xz filter=lfs diff=lfs merge=lfs -text
+*.Zip filter=lfs diff=lfs merge=lfs -text
