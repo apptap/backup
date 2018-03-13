@@ -1,0 +1,3 @@
+SnapEngage.callbackGetWidgetConfig(0,"Hello, thank you for visiting. Would you like any assistance with navigating our website today? &#40;Please note this service is related to England only. If you choose to use this service and would like an email of the chat sending to you, please let us know&#41;.","","",0,0,0,1,0,"GB");
+if ( typeof SnapEngage.setVisitorCountry == 'function' ) { SnapEngage.setVisitorCountry("GB");
+}

@@ -1,0 +1,16 @@
+Aim(s)
+1. Generate HTML pages based upon supplied branding, template and content.
+
+2. Generate HTML template from specification.
+
+Options
+Menu		Include a navbar menu
+Rows[]
+Rows[i]Columns
+Scripts[]
+Bg {
+    style: [color,gradient,img]
+    color1:
+    color2:
+    src:
+}

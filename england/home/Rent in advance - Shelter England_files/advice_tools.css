@@ -1,0 +1,44 @@
+ /*
+ 
+All poscode fields to have attribute type="text" added
+Add container div around postcode input with class="field-container"
+Remove all styles from ".tools-widget h3" css, but keep margin-bottom: 0.5em;
+Increase .tool-widget padding to 1.5em;
+Remove ID from submit buttons (#submit-button)
+Remove padding-bottom: 20px; from #search-form
+
+ */
+ 
+    #submit-button, .submit_button, #user-email-button { position:relative !important;}
+    #submit-button, .search_submit, #user-email-button, .user_email_submit, #dhp-submit-button  {
+        background-color:#92a0a6 !important;
+        border:none;
+        height: auto !important;
+        float:none;
+        box-shadow: 0 1.5px 4px rgba(0,0,0,0.12),0 1.5px 6px rgba(0,0,0,0.06);
+        padding:0.65em 2em !important;
+        color:white;
+        font-size: inherit;
+        font-family: inherit;
+        clear: both;
+        line-height: 1.2;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 300;
+        margin-bottom:0 !important;
+    }
+    .tools-widget h3 {}
+    #search-form { padding-bottom:0 !important;}
+    #postcode-field, #user_email, #email-field {
+        height:3em; 
+        width: 100%;
+        border-radius: 0 !important;
+        height: 2.6em;
+        padding-left: 10px;
+        font-size: 1rem;
+        font-family: inherit;
+        border: 1px solid #d9d9d9;
+        box-sizing: border-box;
+        margin-bottom: 1em;    
+    }

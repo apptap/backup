@@ -1,0 +1,90 @@
+(function ($, Drupal, window, document) {
+
+  Drupal.behaviors.js_defer = {
+    attach: function(context, settings) {
+    	if (typeof Drupal.settings.js_defer !== 'undefined' && Drupal.settings.js_defer.processed !== true) {
+        // prevent double running of behavoir
+        Drupal.settings.js_defer.processed = true;
+
+      	var self = this;
+        // Load with onload
+        if (typeof Drupal.settings.js_defer.onLoad !== 'undefined'){
+					$(window).load(function() {
+ 						self.loadScripts(Drupal.settings.js_defer.onLoad);
+					});
+        }
+        // Load with onReady
+        if (typeof Drupal.settings.js_defer.onReady !== 'undefined'){
+ 						self.loadScripts(Drupal.settings.js_defer.onReady);
+        }
+      }
+    },
+    loadScripts: function(files){
+      var head = document.getElementsByTagName('head').item(0);
+      var self = this;
+      for (var i=0; i < files.length; i++) {
+       	var file = files[i];
+
+        // Modernizr test, currently only accepts tests that return a boolean
+        if (typeof Modernizr !== 'undefined' && typeof file.modernizr !== 'undefined') {
+          if (typeof Modernizr[file.modernizr] === 'undefined' ||  (typeof Modernizr[file.modernizr] !== 'undefined' && Modernizr[file.modernizr] != true)) {
+            continue;
+          }
+        }
+
+       	var script = document.createElement('script');
+        if (typeof file.id !== 'undefined') {
+          script.id = file.id;
+        }
+        var src = file.src;
+        if (src.indexOf('http') === -1) {
+          var useSSL = 'https:' == document.location.protocol;
+          src = (useSSL ? 'https:' : 'http:') + src;
+        }
+        script.src = src;
+				script.async = true;
+				head.appendChild(script);
+       	
+       	// Once Async has loaded load any dependants
+        if (typeof file.id !== 'undefined') {
+       	  $(script).load(function() {
+            self.loadDependant($(this).attr('id'));
+          });
+        }
+			}
+    },
+    loadDependant: function(fileID){
+    	if (typeof Drupal.settings.js_defer.dependant[fileID] !== 'undefined') {
+    		var dependantFiles = Drupal.settings.js_defer.dependant[fileID];
+    		this.loadScripts(dependantFiles);
+    	}
+    }
+	};
+
+})(jQuery, Drupal, this, this.document);;/**/
+/* Source and licensing information for the line(s) below can be found at http://www.independent.co.uk/profiles/ines/modules/ines_commercial/ines_commercial_ads/js/commercial.lazy_ads.js. */
+(function($,Drupal,window){googletag=window.googletag||{};googletag.cmd=googletag.cmd||[];Drupal.behaviors.commercial_lazy_ads={queue:[],attach:function(context,settings){if(typeof Drupal.settings.commercial_ads!=='undefined'&&Drupal.settings.commercial_ads.processed!==true){Drupal.settings.commercial_ads.processed=true;if(typeof Drupal.settings.commercial_ads.gptSlots!=='undefined'){var slots=Drupal.settings.commercial_ads.gptSlots;for(var i=0;i<slots.length;i++){var position=this.findGPTSlot(slots[i]);if(position!==false)this.initGPTSlot(slots[i])}};if(typeof Drupal.settings.commercial_ads.lazy_gptSlots!=='undefined'){var slots=Drupal.settings.commercial_ads.lazy_gptSlots;for(var i=0;i<slots.length;i++){var position=this.findGPTSlot(slots[i]);if(position!==false){if(this.lazyPositions.indexOf(position)===-1){this.lazyPositions.push(position);this.lazyAds[position]=[]};this.lazyAds[position].push(slots[i])}};if(this.lazyPositions.length>0)$(window).on('scroll',{self:this},this.checkPosition)};if(typeof Drupal.settings.commercial_ads.breakpoints!=='undefined')$(window).on('resize',{self:this},this.checkOnResize)}},checkPosition:function(e){var self=e.data.self;if(self.lazyPositions.length===0){$(window).unbind('scroll',self.checkPosition);return};var scrollTop=$(window).scrollTop(),positions=[];for(var i=self.lazyPositions.length-1;i>=0;i--)if(self.lazyPositions[i]<=scrollTop+self.lazyOffset)positions.push(self.lazyPositions.splice(i,1));self.processPositions(positions)},processPositions:function(positions){for(var i=positions.length-1;i>=0;i--){var slots=(typeof this.lazyAds[positions[i]]!=='undefined')?this.lazyAds[positions[i]]:false;if(slots)for(var j=0;j<slots.length;j++)this.initGPTSlot(slots[j])}},findGPTSlot:function(slot){var offset=$('#'+slot).offset();return(typeof offset!=='undefined')?Math.floor(offset.top):false},initGPTSlot:function(slot){if(typeof googletag!=='undefined')if(typeof gptAdSlots[slot]!=='undefined'){googletag.cmd.push(function(){console.log('googletag display: '+slot);googletag.display(slot);if(typeof OX!=='undefined'){oxRefreshSlots=gptAdSlots[slot];OX.dfp_bidder.refresh(oxRefresh,oxRefreshSlots)};googletag.pubads().refresh([gptAdSlots[slot],{changeCorrelator:false}])})}else this.queue.push(slot)},processGPTQueue:function(){var queueLength=this.queue.length;for(var i=0;i<queueLength;i++){var slot=this.queue.shift(),position=this.findGPTSlot(slot);if(position!==false)this.initGPTSlot(slot)}},checkOnResize:function(e){},lazyPositions:[],lazyAds:{},lazyOffset:1e3,breakPoints:[750,1050]}})(jQuery,Drupal,this);;
+/* Source and licensing information for the above line(s) can be found at http://www.independent.co.uk/profiles/ines/modules/ines_commercial/ines_commercial_ads/js/commercial.lazy_ads.js. */
+/* Source and licensing information for the line(s) below can be found at http://www.independent.co.uk/profiles/ines/modules/ines_js/js/in/html.tpl.js. */
+var captify_kw_query_11667="";(function(c,a,p,t,i,f,y){i=c.createElement(a);t=c.getElementsByTagName(a)[0];i.type='text/javascript';i.async=true;i.src=p;t.parentNode.insertBefore(i,t)})(document,'script','https://p.cpx.to/p/11667/px.js');;
+/* Source and licensing information for the above line(s) can be found at http://www.independent.co.uk/profiles/ines/modules/ines_js/js/in/html.tpl.js. */
+/*! Lazy Load 1.9.5 - MIT license - Copyright 2010-2015 Mika Tuupola */
+!function(a,b,c,d){var e=a(b);a.fn.lazyload=function(f){function g(){var b=0;i.each(function(){var c=a(this);if(!j.skip_invisible||c.is(":visible"))if(a.abovethetop(this,j)||a.leftofbegin(this,j));else if(a.belowthefold(this,j)||a.rightoffold(this,j)){if(++b>j.failure_limit)return!1}else c.trigger("appear"),b=0})}var h,i=this,j={threshold:0,failure_limit:0,event:"scroll",effect:"show",container:b,data_attribute:"original",skip_invisible:!1,appear:null,load:null,placeholder:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"};return f&&(d!==f.failurelimit&&(f.failure_limit=f.failurelimit,delete f.failurelimit),d!==f.effectspeed&&(f.effect_speed=f.effectspeed,delete f.effectspeed),a.extend(j,f)),h=j.container===d||j.container===b?e:a(j.container),0===j.event.indexOf("scroll")&&h.bind(j.event,function(){return g()}),this.each(function(){var b=this,c=a(b);b.loaded=!1,(c.attr("src")===d||c.attr("src")===!1)&&c.is("img")&&c.attr("src",j.placeholder),c.one("appear",function(){if(!this.loaded){if(j.appear){var d=i.length;j.appear.call(b,d,j)}a("<img />").bind("load",function(){var d=c.attr("data-"+j.data_attribute);c.hide(),c.is("img")?c.attr("src",d):c.css("background-image","url('"+d+"')"),c[j.effect](j.effect_speed),b.loaded=!0;var e=a.grep(i,function(a){return!a.loaded});if(i=a(e),j.load){var f=i.length;j.load.call(b,f,j)}}).attr("src",c.attr("data-"+j.data_attribute))}}),0!==j.event.indexOf("scroll")&&c.bind(j.event,function(){b.loaded||c.trigger("appear")})}),e.bind("resize",function(){g()}),/(?:iphone|ipod|ipad).*os 5/gi.test(navigator.appVersion)&&e.bind("pageshow",function(b){b.originalEvent&&b.originalEvent.persisted&&i.each(function(){a(this).trigger("appear")})}),a(c).ready(function(){g()}),this},a.belowthefold=function(c,f){var g;return g=f.container===d||f.container===b?(b.innerHeight?b.innerHeight:e.height())+e.scrollTop():a(f.container).offset().top+a(f.container).height(),g<=a(c).offset().top-f.threshold},a.rightoffold=function(c,f){var g;return g=f.container===d||f.container===b?e.width()+e.scrollLeft():a(f.container).offset().left+a(f.container).width(),g<=a(c).offset().left-f.threshold},a.abovethetop=function(c,f){var g;return g=f.container===d||f.container===b?e.scrollTop():a(f.container).offset().top,g>=a(c).offset().top+f.threshold+a(c).height()},a.leftofbegin=function(c,f){var g;return g=f.container===d||f.container===b?e.scrollLeft():a(f.container).offset().left,g>=a(c).offset().left+f.threshold+a(c).width()},a.inviewport=function(b,c){return!(a.rightoffold(b,c)||a.leftofbegin(b,c)||a.belowthefold(b,c)||a.abovethetop(b,c))},a.extend(a.expr[":"],{"below-the-fold":function(b){return a.belowthefold(b,{threshold:0})},"above-the-top":function(b){return!a.belowthefold(b,{threshold:0})},"right-of-screen":function(b){return a.rightoffold(b,{threshold:0})},"left-of-screen":function(b){return!a.rightoffold(b,{threshold:0})},"in-viewport":function(b){return a.inviewport(b,{threshold:0})},"above-the-fold":function(b){return!a.belowthefold(b,{threshold:0})},"right-of-fold":function(b){return a.rightoffold(b,{threshold:0})},"left-of-fold":function(b){return!a.rightoffold(b,{threshold:0})}})}(jQuery,window,document);
+;/**/
+/* Source and licensing information for the line(s) below can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/ines_theme/js/vendor/jquery.timeago.js. */
+(function(factory){if(typeof define==='function'&&define.amd){define(['jquery'],factory)}else if(typeof module==='object'&&typeof module.exports==='object'){factory(require('jquery'))}else factory(jQuery)}(function($){$.timeago=function(timestamp){if(timestamp instanceof Date){return inWords(timestamp)}else if(typeof timestamp==="string"){return inWords($.timeago.parse(timestamp))}else if(typeof timestamp==="number"){return inWords(new Date(timestamp))}else return inWords($.timeago.datetime(timestamp))};var $t=$.timeago;$.extend($.timeago,{settings:{refreshMillis:6e4,allowPast:true,allowFuture:false,localeTitle:false,cutoff:604800000,autoDispose:true,strings:{prefixAgo:null,prefixFromNow:null,suffixAgo:"ago",suffixFromNow:"from now",inPast:'any moment now',seconds:"%d secs",minute:"1 min",minutes:"%d mins",hour:"an hour",hours:"%d hours",day:"a day",days:"%d days",month:"a month",months:"%d months",year:"about a year",years:"%d years",wordSeparator:" ",numbers:[]}},inWords:function(distanceMillis){if(!this.settings.allowPast&&!this.settings.allowFuture)throw'timeago allowPast and allowFuture settings can not both be set to false.';var $l=this.settings.strings,prefix=$l.prefixAgo,suffix=$l.suffixAgo;if(this.settings.allowFuture)if(distanceMillis<0){prefix=$l.prefixFromNow;suffix=$l.suffixFromNow};if(!this.settings.allowPast&&distanceMillis>=0)return this.settings.strings.inPast;var seconds=Math.abs(distanceMillis)/1e3,minutes=seconds/60,hours=minutes/60,days=hours/24,years=days/365
+function substitute(stringOrFunction,number){var string=$.isFunction(stringOrFunction)?stringOrFunction(number,distanceMillis):stringOrFunction,value=($l.numbers&&$l.numbers[number])||number;return string.replace(/%d/i,value)};var words=seconds<45&&substitute($l.seconds,Math.round(seconds))||seconds<90&&substitute($l.minute,1)||minutes<45&&substitute($l.minutes,Math.round(minutes))||minutes<90&&substitute($l.hour,1)||hours<24&&substitute($l.hours,Math.round(hours))||hours<42&&substitute($l.day,1)||days<30&&substitute($l.days,Math.round(days))||days<45&&substitute($l.month,1)||days<365&&substitute($l.months,Math.round(days/30))||years<1.5&&substitute($l.year,1)||substitute($l.years,Math.round(years)),separator=$l.wordSeparator||"";if($l.wordSeparator===undefined)separator=" ";return $.trim([prefix,words,suffix].join(separator))},parse:function(iso8601){var s=$.trim(iso8601);s=s.replace(/\.\d+/,"");s=s.replace(/-/,"/").replace(/-/,"/");s=s.replace(/T/," ").replace(/Z/," UTC");s=s.replace(/([\+\-]\d\d)\:?(\d\d)/," $1$2");s=s.replace(/([\+\-]\d\d)$/," $100");return new Date(s)},datetime:function(elem){var iso8601=$t.isTime(elem)?$(elem).attr("datetime"):$(elem).attr("title");return $t.parse(iso8601)},isTime:function(elem){return $(elem).get(0).tagName.toLowerCase()==="time"}});var functions={init:function(){var refresh_el=$.proxy(refresh,this);refresh_el();var $s=$t.settings;if($s.refreshMillis>0)this._timeagoInterval=setInterval(refresh_el,$s.refreshMillis)},update:function(timestamp){var date=(timestamp instanceof Date)?timestamp:$t.parse(timestamp);$(this).data('timeago',{datetime:date});if($t.settings.localeTitle)$(this).attr("title",date.toLocaleString());refresh.apply(this)},updateFromDOM:function(){$(this).data('timeago',{datetime:$t.parse($t.isTime(this)?$(this).attr("datetime"):$(this).attr("title"))});refresh.apply(this)},dispose:function(){if(this._timeagoInterval){window.clearInterval(this._timeagoInterval);this._timeagoInterval=null}}};$.fn.timeago=function(action,options){var fn=action?functions[action]:functions.init;if(!fn)throw new Error("Unknown function name '"+action+"' for timeago");this.each(function(){fn.call(this,options)});return this}
+function refresh(){var $s=$t.settings;if($s.autoDispose&&!$.contains(document.documentElement,this)){$(this).timeago("dispose");return this};var data=prepareData(this);if(!isNaN(data.datetime))if($s.cutoff===0||Math.abs(distance(data.datetime))<$s.cutoff){$(this).text(inWords(data.datetime))}else if($(this).attr('title').length>0)$(this).text($(this).attr('title'));return this}
+function prepareData(element){element=$(element);if(!element.data("timeago")){element.data("timeago",{datetime:$t.datetime(element)});var text=$.trim(element.text());if($t.settings.localeTitle){element.attr("title",element.data('timeago').datetime.toLocaleString())}else if(text.length>0&&!($t.isTime(element)&&element.attr("title")))element.attr("title",text)};return element.data("timeago")}
+function inWords(date){return $t.inWords(distance(date))}
+function distance(date){return(new Date().getTime()-date.getTime())};document.createElement("abbr");document.createElement("time")}));;
+/* Source and licensing information for the above line(s) can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/ines_theme/js/vendor/jquery.timeago.js. */
+/* Source and licensing information for the line(s) below can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/ines_theme/js/ines-lazy-load.js. */
+(function($){$(document).ready(function(){$(".lazy").lazyload({effect:"fadeIn",threshold:600,load:function(elements_left,settings){$(this).removeClass('lazy')}});$(".lazy-video").each(function(){var poster=new Image(),pSrc=$(this).data('poster'),pOrSrc=$(this).parent().data('poster');if(pOrSrc)pSrc=pOrSrc;var source=$(this).find('source'),video=$(this);poster.onload=function(){video.attr('poster',pSrc);source.attr('src',source.data('src'));video.removeClass('lazy-video');video[0].load();video[0].play()};poster.src=pSrc;poster.onload()});$(window).scroll()})})(jQuery);;
+/* Source and licensing information for the above line(s) can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/ines_theme/js/ines-lazy-load.js. */
+/* Source and licensing information for the line(s) below can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/ines_theme/js/ines-share-init.js. */
+(function($,Drupal,window,document){Drupal.behaviors.ines_share={attach:function(context,settings){if(typeof Drupal.settings.ines_share!=='undefined'&&Drupal.settings.ines_share.processed!==true){Drupal.settings.ines_share.processed=true;if(Drupal.settings.ines_share.fbAppId!=='undefined'&&Drupal.settings.ines_share.fbAppId!==false)Drupal.behaviors.ines_share.facebookInit(Drupal.settings.ines_share.fbAppId);window.twttr=Drupal.behaviors.ines_share.twitterInit()}},facebookInit:function(appId){var d=document,s='script',id='facebook-jssdk';if(d.getElementById(id))return;var h=document.getElementsByTagName('head').item(0);js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4&appId="+appId;h.appendChild(js)},twitterInit:function(){var d=document,s='script',id='twitter-wjs';t=window.twttr||{};if(d.getElementById(id))return t;var h=document.getElementsByTagName('head').item(0);js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";h.appendChild(js);t._e=[];t.ready=function(f){t._e.push(f)};return t}}})(jQuery,Drupal,this,this.document);;
+/* Source and licensing information for the above line(s) can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/ines_theme/js/ines-share-init.js. */
+/* Source and licensing information for the line(s) below can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/independent_theme/js/sitecatalyst.masthead_tracking.js. */
+(function($){$('#masthead nav ol li a').bind('click',function(e){var s=s_gi(s_account),navtrackurl='T - '+($(this).attr('href'));s.linkTrackVars='prop6';s.prop6=navtrackurl;s.tl(this,'o',navtrackurl);s.prop6=''});$('#masthead #menu ul li a').bind('click',function(e){var s=s_gi(s_account),navtrackurl='B - '+($(this).attr('href'));s.linkTrackVars='prop6';s.prop6=navtrackurl;s.tl(this,'o',navtrackurl);s.prop6=''});$('.sub-nav .mega-nav a').bind('click',function(e){var s=s_gi(s_account),navtrackurl='IBM - '+($(this).attr('href'));s.linkTrackVars='prop6';s.prop6=navtrackurl;s.tl(this,'o',navtrackurl);s.prop6=''});$(".label:contains('The Street'), .label:contains('the street')").each(function(index){var parent=$(this).closest('div.content'),childLink=$(parent).find('a');$(childLink).bind('click',function(e){var s=s_gi(s_account),navtrackurl='Street - '+($(this).attr('href'));s.linkTrackVars='prop6';s.prop6=navtrackurl;s.tl(this,'o',navtrackurl);s.prop6=''})})})(jQuery);;
+/* Source and licensing information for the above line(s) can be found at http://www.independent.co.uk/sites/all/themes/ines_themes/independent_theme/js/sitecatalyst.masthead_tracking.js. */

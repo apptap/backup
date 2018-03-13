@@ -1,0 +1,216 @@
+﻿/*LINKS*/
+a {
+    color: #06E;
+}
+a:visited {
+    color: #06E;
+}
+a:hover {
+    color: #03F;
+}
+a:focus {
+    color: #03F;
+}
+a:active {
+    color: #03F;
+}
+/*HEADER*/
+#header a {
+    color: white;
+}
+#header a:visited {
+    color: white;
+}
+#header a:hover {
+    color:#CCC;
+}
+#header a:focus {
+    color:#CCC;
+}
+#header a:active {
+    color:#CCC;
+}
+/*BREADCRUMB*/
+.breadcrumb {
+    background-color: #6d6f73;
+    color: black;
+}
+.breadcrumb a {
+    color: white;
+}
+.breadcrumb a:visited {
+    color: white;
+}
+.breadcrumb a:hover {
+}
+.breadcrumb a:focus {
+}
+.breadcrumb a:active {
+}
+/*POPULAR TASKS & STATUS*/
+#promoted a {
+    color: white;
+}
+#promoted a:visited {
+    color: white;
+}
+#promoted a:hover {
+    color: #CCC;
+}
+#promoted a:focus {
+    color: #CCC;
+}
+#promoted a:active {
+    color: #CCC;
+}
+/*INFORMATION*/
+/*CONTENT*/
+#main-area > table {
+    border-color: black;
+}
+#main-area > table > thead {
+    border-color: black;
+}
+#main-area > table > tbody {
+    border-color: black;
+}
+#main-area > table > thead > tr {
+    border-color: black;
+}
+#main-area > table > tbody > tr {
+    border-color: black;
+}
+#main-area > table > thead > tr > th {
+    border-color: black;
+}
+#main-area > table > tbody > tr > td {
+    border-color: black;
+}
+#content .download {
+    border-color: #CCC;
+}
+/*FOOTER*/
+.footer a {
+    color: white;
+}
+.footer a:hover {
+    color:#999
+}
+.footer a:focus {
+    color:#999
+}
+/*BACKGROUNDS, BORDERS & TEXT*/
+#wallpaper {
+    background: no-repeat center center;
+    background-size: cover;
+    background-color: #181818;
+    color: white;
+}
+.pale {
+    background-color: #F5F5F5;
+}
+/*COLOUR TRIALS*/
+.colour {
+    background-color: purple;
+    }
+.colour    #popular-tasks {
+    background-color: purple;
+    color: white;
+}
+.colour #status {
+    background-color: purple;
+    color: white;
+}
+#popular-tasks, #status {
+    background-color: rgba(00,51,255,.75);
+}
+.footer {
+    background-color: #06e;
+    color: #999;
+}
+/*BORDERS*/
+#information-services > h1 {
+    border-color: #000;
+}
+#information-services li {
+    border-color: #CCC;
+}
+#content li {
+    border-color: #CCC;
+}
+#content dd {
+    border-color: #CCC;
+}
+.footer * {
+    border-color: #999;
+}
+/*FORM*/
+.search-button {
+    background-color: #06E;
+    color: white;
+}
+.search-button:visited {
+    background-color: #06E;
+    color: white;
+}
+.search-button:hover {
+    background-color: #03F;
+    color: white;
+}
+.search-button:focus {
+    background-color: #03F;
+    color: white;
+}
+.search-button:active {
+    background-color: #03F;
+    color: white;
+}
+#content .search-box {
+    border: black solid 4px;
+}
+#content form select {
+    border: black solid 4px;
+}
+/*EXPANDER*/
+.expandButton {
+background-color: #06E;
+color: white;
+border: 1px solid #06E;
+}
+.expandButton:hover {
+background-color: white;
+color: #06E;
+border: 1px solid #06E;
+}
+.closeButton {
+background-color: white;
+color: #06E;
+border: 1px solid #06E;
+}
+.closeButton:hover {
+background-color: #06E;
+color: white;
+border: 1px solid #06E;
+}
+.question {
+background-color: #06E;
+color: white;
+border: 1px solid #06E;
+}
+.question:hover {
+background-color: white;
+color: #06E;
+border: 1px solid #06E;
+}
+/*A TO Z */
+#main-area .atoz li span {
+border: 4px solid black;
+}
+#main-area .atoz li a {
+border: 4px solid #06e;
+}
+#main-area .atoz li a:hover {
+border: 4px solid #06e;
+background-color: #06e;
+color: white;
+}

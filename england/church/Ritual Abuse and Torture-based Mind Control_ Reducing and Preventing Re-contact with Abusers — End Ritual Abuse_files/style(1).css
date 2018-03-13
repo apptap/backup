@@ -1,0 +1,167 @@
+/*
+Theme Name:     Typology Child
+Theme URI:      http://mekshq.com
+Description:    Child theme for Typology theme
+Author:         Likely Arts
+Author URI:     http://likelyarts.com
+Template:       typology
+Version:        0.1.1
+*/
+
+.typology-cover-empty, .typology-cover-item, .typology-header-sticky {
+background: rgba(211,201,191,0.98);
+background: -moz-linear-gradient(top, rgba(211,201,191,0.98) 0%, rgba(248,248,248,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(211,201,191,0.98)), color-stop(100%, rgba(248,248,248,1)));
+background: -webkit-linear-gradient(top, rgba(211,201,191,0.98) 0%, rgba(248,248,248,1) 100%);
+background: -o-linear-gradient(top, rgba(211,201,191,0.98) 0%, rgba(248,248,248,1) 100%);
+background: -ms-linear-gradient(top, rgba(211,201,191,0.98) 0%, rgba(248,248,248,1) 100%);
+background: linear-gradient(to bottom, rgba(211,201,191,0.98) 0%, rgba(248,248,248,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3c9bf', endColorstr='#f8f8f8', GradientType=0 );
+}
+
+.typology-header .typology-nav .sub-menu li a  {
+color: #1a3c70;
+padding: 8px 15px 0 20px;
+text-transform: none;
+font-weight: 600;
+}
+
+.typology-header .typology-nav .sub-menu>li:first-child>a, .typology-header .typology-nav .sub-menu>li:first-child>a:hover  {
+padding: 15px 15px 0 20px;
+}
+
+.typology-header .typology-nav .sub-menu li a:hover, .typology-header .typology-nav .sub-menu li:hover a {
+padding: 8px 15px 0 20px;
+transition-property: none;
+transition-duration: 0s;
+}
+
+.typology-header .typology-nav .sub-menu>li:last-child>a, .typology-header .typology-nav .sub-menu>li:last-child>a:hover {
+padding: 8px 15px 20px 20px;
+}
+
+/*---slide-out icon-------*/
+.typology-action-sidebar i.panel-btn:before {
+content: '\f002'
+}
+
+@media (max-width: 1024px) {
+.typology-action-sidebar i.panel-btn:before {
+content: '\f0c9'
+}
+
+.post-letter {
+visibility: hidden;
+}
+
+.typology-sidebar {
+max-width: 600px;
+}
+.typology-responsive-menu .typology-nav .sub-menu {
+display: block;
+}
+
+.typology-footer .widget_tag_cloud {
+display: none;
+}
+}
+
+@media (max-width: 740px) and (orientation: landscape) {
+.typology-sidebar {
+max-width: 740px;
+}
+}
+
+.post-letter {
+color: rgba(160, 187, 214, 0.15);
+z-index: -100;
+}
+
+.section-content-c .typology-posts {
+align-items: stretch;
+}
+
+.typology-layout-c.typology-post {
+margin-bottom: 3rem;
+padding: 0 20px;
+text-align: left;
+align-items: stretch;
+justify-content: baseline;
+}
+
+.typology-layout-c .entry-header {
+align-self: top;
+margin: 0;
+padding: 40px;
+width: 100%;
+height: auto;
+background: rgba(160,187,214,0.29);
+background: -moz-linear-gradient(-45deg, rgba(160,187,214,0.29) 0%, rgba(160,187,214,0.07) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(160,187,214,0.29)), color-stop(100%, rgba(160,187,214,0.07)));
+background: -webkit-linear-gradient(-45deg, rgba(160,187,214,0.29) 0%, rgba(160,187,214,0.07) 100%);
+background: -o-linear-gradient(-45deg, rgba(160,187,214,0.29) 0%, rgba(160,187,214,0.07) 100%);
+background: -ms-linear-gradient(-45deg, rgba(160,187,214,0.29) 0%, rgba(160,187,214,0.07) 100%);
+background: linear-gradient(135deg, rgba(160,187,214,0.29) 0%, rgba(160,187,214,0.07) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0bbd6', endColorstr='#a0bbd6', GradientType=1 );
+}
+
+.typology-layout-c .entry-header .post-letter {
+color: rgba(160, 187, 214, 0);
+}
+
+.entry-content .h1, .entry-content .h2, .entry-content .h3, .entry-content .h4, .entry-content .h5, .entry-content .h6, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+margin: 6rem 0 3.5rem 0;
+}
+
+.entry-content img {
+max-width: 100% !important;
+height: auto !important;
+}
+
+.wp-caption-text {
+text-align: left;
+}
+
+#assistance {
+border-bottom: 0;
+}
+
+.comment-content a, .entry-content a, .textwidget a, .typology-footer .widget p a {
+overflow-wrap: break-word;
+word-wrap: break-word;
+}
+
+.typology-sidebar-header .site-title a {
+color: #f0eeec;
+}
+
+.typology-footer {
+text-align: center;
+}
+
+.typology-footer .copy {
+padding: 40px 0;
+font-size: 0.75em;
+}
+
+/*==========================Therapy Page Template Styles===========================*/
+
+.page-template-page-therapy .typology-cover-empty, .typology-cover-item, .typology-header-sticky {
+background: rgba(160,187,214,0.5);
+background: -moz-linear-gradient(top, rgba(160,187,214,0.5) 0%, rgba(255,255,255,0) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(160,187,214,0.5)), color-stop(100%, rgba(255,255,255,0)));
+background: -webkit-linear-gradient(top, rgba(160,187,214,0.5) 0%, rgba(255,255,255,0) 100%);
+background: -o-linear-gradient(top, rgba(160,187,214,0.5) 0%, rgba(255,255,255,0) 100%);
+background: -ms-linear-gradient(top, rgba(160,187,214,0.5) 0%, rgba(255,255,255,0) 100%);
+background: linear-gradient(to bottom, rgba(160,187,214,0.5) 0%, rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0bbd6', endColorstr='#ffffff', GradientType=0 );
+}
+
+.page-template-page-therapy .site-title {
+text-transform: none;
+letter-spacing: -0.025em;
+}
+
+.page-template-page-therapy li.menu-item-object-custom a {
+font-weight: 400;
+}

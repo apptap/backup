@@ -1,0 +1,358 @@
+/* General styling elements - should be no need to edit*/
+
+body, body * {
+    vertical-align: baseline;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+font-weight: 600;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+
+/* THIS IS A CSS HACK TO TARGET ONLY IE 10 and UP (IE10+), 
+WE NEED TO INCREASE LETTER SPACING TO REMOVE THE SUBPIXEL BUG 
+WHEN SCALING WORDS PRINTED WITH GREENSOCKS SplitText() */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+{
+    /* IE10+ CSS styles go here */
+    body,
+    body *
+    {
+        letter-spacing: -.01;
+
+        text-shadow: 3px 3px 3px rgba(0,0,0,0);
+    }
+		.ctaArrow {
+		margin-top:-63px;
+	}
+}
+
+
+.exit {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+}
+
+.images {
+    overflow: hidden;
+    position: absolute;
+	z-index: 200;
+
+}
+
+.images img {
+    width: 100%;
+    height: auto;
+}
+
+.cta {
+    overflow: hidden;
+    position: absolute;
+    z-index: 500;
+}
+
+.ctaArrow {
+    width: auto;
+    height: 100%;
+}
+
+.cta-txt {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    width: 95%;
+}
+
+.roundel-holder {
+	position: absolute;
+	text-align: center;
+	width:auto;
+	z-index: 100;
+}
+
+.roundel {
+	background-color: rgb(0, 0, 0);
+	border-radius: 50%;
+	overflow: hidden; 
+	display: inline-block;
+}
+
+.roundel-content {
+	color: #FFF;
+	position: relative;
+  	top: 50%;
+  	-ms-transform:  translateY(-50%); /* IE 9 */
+-webkit-transform: translateY(-50%); /* Safari */
+transform: translateY(-50%);
+}
+
+
+
+#main-container {
+    overflow: hidden;
+    position: absolute;
+    background: #FFF;
+}
+
+#border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    z-index: 860;
+}
+
+.blank {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    z-index: 850;
+}
+
+.terms {
+    font-weight: 400;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+#termsBtn {
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#termsTxt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.9);
+    box-sizing: border-box;
+    z-index: 800;
+}
+
+#frames {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    overflow: hidden;
+}
+
+:focus {
+    outline: none;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+#loader{
+	position:absolute;
+	left:50%;
+	margin-left:-30px;
+	top:50%;
+	margin-top:-30px;
+	 z-index: 870;
+}
+
+/**************************************************************/
+#animHolder {
+    display: inline-block;
+    position: absolute;
+	z-index: 50;
+}
+
+
+
+
+
+/* creative size */
+#main-container {
+    width: 728px;
+    height: 90px;
+}
+
+/* Logo size / position / crop */
+
+#three-logo {
+    right: 10px;
+    top: 10px;
+    width: 48px;
+
+    /* adjust to scale */
+    height:75px;
+
+    /* adjust to crop URL for smaller formats */
+    z-index: 600;
+}
+
+/* Terms */
+
+#termsBtn {
+    font-size: 10px;
+    position: absolute;
+    left: 480px;
+    bottom: 5px;
+    color: rgb(118, 118, 118);
+}
+
+#termsTxt {
+    font-size: 10px;
+    padding: 10px;
+}
+
+.myColour {
+	 /* Ken Red */
+    /*	color: rgb(236, 0, 68); */
+
+	/* Hucknall Red */
+    /*	color: rgb(220, 53, 14); */
+
+     /* Barbie Pink */
+    /*	color: rgb(233, 0, 102); */
+
+    /* Prince Purple*/
+    /*  color: rgb(130, 54, 140);*/
+
+   /* Maggie Blue */
+    /*	color: rgb(0, 123, 195);*/
+
+     /* Kermit Green*/
+    /*	color: rgb(0, 133, 123);*/
+
+   /* Hulk Green*/
+    /*	color: rgb(0, 134, 78); */
+
+     /* Clooney Grey*/
+    /*	color: rgb(118, 118, 118); 	*/
+
+   /* Vadar Black*/
+    /*	color: rgb(0, 0, 0); */
+
+    
+
+	color: rgb(233, 0, 102);
+    background-color: rgb(233, 0, 102);
+    fill: rgb(233, 0, 102);
+}
+
+.ctaOver
+{
+    background-color: rgb(140, 0, 60);
+
+    fill: rgb(140, 0, 60);
+}
+
+.highlight,
+.ctaArrow
+{
+    background-color: transparent;
+}
+
+/* frame 00 elements */
+
+
+#txt-00, #txt-00a, #txt-01, #txt-02, #txt-03, #txt-04 {
+
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+
+
+	  left:15px;
+	  width:400px;
+	position: absolute;
+	
+	top:14px;
+		  font-size: 28px;
+}
+
+
+#txt-00 {
+	top:18px;
+	font-size: 50px;
+	 line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+
+#txt-00a {
+	top:60px;
+	font-size: 22px;
+	   line-height: 1;
+}
+
+#sloth {
+	width: 165px;
+	left: 250px;
+	top: -65px;
+	
+ -ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+	
+	
+}
+
+
+
+#cta-01 {
+
+    width: 140px;
+    left: 480px;
+    top: 25px;
+    line-height: 32px;
+
+    /* make text line-height same as height to vertically center text */
+    font-size: 14px;
+}
+
+
+
+
+
+#handset {
+	width: 50px;
+	left: 475px;
+	top: 5px;
+	
+	z-index: -1;
+}
+
+.roundel-holder {
+	left: 235px;
+	top:5px;
+	font-size: 10px; /* edit to adjust small and sub txt in lockup*/
+	z-index: 200;
+}
+/* Just the roundel size */
+.roundel {
+	width: 80px;
+	height:80px;
+	  line-height: 1; 
+}
+
+
+.roundel-txt-big {
+	font-size: 36px; /* edit to adjust big price txt in lockup*/
+	letter-spacing: -0.05em;
+}
+
+/* Edit / add styling for upfront cost to overide generic settings as required */
+.txt-upfront {
+
+	font-size: 11px;
+	margin-top: 2px;
+		letter-spacing: -0.02em;
+
+
+}

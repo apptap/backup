@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, body *, body * *, body * * *, #wallpaper, .pale, .footer, .breadcrumb {
+	background-color: black;
+	color: orange;
+	background-image: none;
+}
+body a, body a:visited {
+	color: #6F6;
+	text-decoration: none;
+}
+body a:hover, body a:focus, body a:active {
+	text-decoration: underline;
+}
+#main-area > table, #main-area > table > thead, #main-area > table > tbody, #main-area > table > thead > tr, #main-area > table > tbody > tr, 
+#main-area > table > thead > tr > th, #main-area > table > tbody > tr > td {
+	border-color: orange;
+}
+#search-button {
+	background-color: #6F6;
+}
+form input[type=text] {
+background-color: white;
+color: black;
+}

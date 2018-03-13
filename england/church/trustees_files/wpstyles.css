@@ -1,0 +1,36 @@
+a:link {color:#416bc9;}
+a:visited {color:#416bc9;}
+a:hover {color:#416bc9;}
+a:active {color:#4151c8;}
+.Wp-Default-P
+{
+    margin:0.0px 0.0px 0.0px 0.0px; text-align:left; font-weight:400;
+}
+.Wp-List-Paragraph-P
+{
+    margin:0.0px 0.0px 13.0px 48.0px; text-align:left; font-weight:400;
+}
+.Wp-Normal-P
+{
+    margin:0.0px 0.0px 0.0px 0.0px; text-align:left; font-weight:400;
+}
+.Wp-Pa2-P
+{
+    margin:0.0px 0.0px 0.0px 0.0px; text-align:left; font-weight:400;
+}
+.Wp-Pa3-P
+{
+    margin:0.0px 0.0px 0.0px 0.0px; text-align:left; font-weight:400;
+}
+.Wp-Default-Paragraph-Font-C
+{
+    font-family:"Times New Roman", serif;
+}
+.Wp-Emphasis-C
+{
+    font-family:"Verdana", sans-serif; font-style:italic; color:#3878d9;
+}
+.Wp-Hyperlink-C
+{
+    font-family:"Verdana", sans-serif; color:#0000ff; text-decoration:underline;
+}
